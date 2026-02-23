@@ -22,6 +22,9 @@ for epoch in range(num_epochs)
 
 - 反向传播：
 
+
+
+
 - 优化：
 
 
@@ -52,9 +55,23 @@ nn.Conv2d(in_channels,out_channels,kernel_size,stride,padding)
 有时候还可以配合重叠池化（就是步长小于长度，这样就重叠了）
 ### RNN
 
+注(important)：最开始学深度学习的时候很多时候都有种违和感，后来才发现只因为在之前线性代数的学习中我们提到向量默认他是列向量，但是在深度学习的工程实践中我们提到的的向量是默认行向量的
+
+
+核心概念：时间步，隐藏状态，嵌入embedding
+
+
 #### 原始RNN
+nn.RNN(input_size,hidden_size,batch_first)
+nn.RNN(10, 20, batch_first=True)
+输入 Shape： (3, 5, 10) 输出 Shape： (3, 5, 20)
+这里解释一下输入，首先10是embedding维度，然后3是3句话，5是每句话的token数，rnn是每句话一起开始运算的
+再解释一下输出，这里nn.RNN的输出就默认指的是隐藏状态，而不是最终输出
 
 #### LSTM
+扩展慨念：细胞状态
+
+
 
 #### GRU
 
